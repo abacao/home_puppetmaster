@@ -1,5 +1,5 @@
 # home_puppetmaster
-Bulding Puppet Master with Ubuntu Server 16.04
+Bulding Puppet Master with Ubuntu Server 16.04 for home fun and profit
 
 
 1st - Download ISO:
