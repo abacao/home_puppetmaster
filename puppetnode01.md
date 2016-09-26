@@ -28,14 +28,29 @@ http://archive.ubuntu.com/ubuntu/dists/xenial-updates/main/installer-amd64/curre
  - Yes to UTC
  - Restart
  
-## 3rd - Install NTP
-sudo su && apt -y install ntp
+## 3rd - Google DNS
+sudo su
+echo "dns-nameservers 8.8.8.8 8.8.4.4" >> /etc/network/interfaces
+service networking restart
+service networking status
+
+## 4th - Install NTP
+sudo su
+apt -y install ntp
 service ntp restart
 service ntp status
 
-## 4th - Configure Hostname
-sudo su echo "prod-webserver01.local.lan" > /etc/hostname echo "127.0.0.1    prod-webserver01 prod-webserver01.local.lan localhost" > /etc/hosts
-
-## 5th - Install Agent
+## 5th - Configure Hostname
 sudo su
-cd /tmp && wget https://apt.puppetlabs.com/puppetlabs-release-pc1-trusty.deb && dpkg -i puppetlabs-release-pc1-trusty.deb && apt -y update && apt -y install puppet-agent
+echo "prod-webserver01.local.lan" > /etc/hostname 
+echo "127.0.0.1    prod-webserver01 prod-webserver01.local.lan localhost" > /etc/hosts
+
+## 6th - Install Agent
+sudo su
+cd /tmp && wget https://apt.puppetlabs.com/puppetlabs-release-pc1-trusty.deb && dpkg -i puppetlabs-release-pc1-trusty.deb
+apt -y update && apt -y install puppet-agent
+
+## 7th - Ensure Puppet Running
+sudo su
+/opt/puppetlabs/bin/puppet resource service puppet ensure=running enable=true
+
