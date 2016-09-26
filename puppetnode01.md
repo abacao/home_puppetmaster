@@ -33,6 +33,9 @@ sudo su && apt -y install ntp
 service ntp restart
 service ntp status
 
-## 4th - Install Agent
+## 4th - Configure Hostname
+sudo su echo "prod-webserver01.local.lan" > /etc/hostname echo "127.0.0.1    prod-webserver01 prod-webserver01.local.lan localhost" > /etc/hosts
+
+## 5th - Install Agent
 sudo su
 cd /tmp && wget https://apt.puppetlabs.com/puppetlabs-release-pc1-trusty.deb && dpkg -i puppetlabs-release-pc1-trusty.deb && apt -y update && apt -y install puppet-agent
