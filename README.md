@@ -23,5 +23,10 @@ http://archive.ubuntu.com/ubuntu/dists/xenial-updates/main/installer-amd64/curre
  - Partition: Guided - use entire disk
  - Select and YES to write the changes
  - Let it run.......
- 
+ - No automatic updates
+ - Let it run.......
+ - Select "Standard system utilities" and "OpenSSH Server"
+ - Yes to Install Grub
+ - Yes to UTC
+ - Restart
  
