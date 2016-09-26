@@ -29,7 +29,10 @@ http://archive.ubuntu.com/ubuntu/dists/xenial-updates/main/installer-amd64/curre
  - Restart
  
 ## 3rd - Install NTP
-sudo su
-apt -y install ntp
+sudo su && apt -y install ntp
 service ntp restart
 service ntp status
+
+## 4th - Install Agent
+sudo su
+cd /tmp && wget https://apt.puppetlabs.com/puppetlabs-release-pc1-trusty.deb && dpkg -i puppetlabs-release-pc1-trusty.deb && apt -y update && apt -y install puppet-agent
