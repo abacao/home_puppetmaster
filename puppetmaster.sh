@@ -20,7 +20,12 @@ git config --global user.name "Andre Bacao"
 git config --global user.email andre@bacao.pt
 git config --global credential.helper 'cache --timeout=3600'
 git clone https://github.com/abacao/home_puppetmaster.git
-mv home_puppetmaster /etc
+cd home_puppetmaster
+touch install_time_date
+git add install_time_date
+git commit -a -m "add install_time_date"
+cd ..
+mv /tmp/home_puppetmaster /etc
 cp /etc/puppetlabs/* /etc/home_puppetmaster -R
 sudo mv /etc/puppetlabs /etc/puppetlabs.bak
 sudo mv /etc/home_puppetmaster /etc/puppetlabs
