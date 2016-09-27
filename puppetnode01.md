@@ -27,7 +27,7 @@ http://archive.ubuntu.com/ubuntu/dists/xenial-updates/main/installer-amd64/curre
  - Yes to Install Grub
  - Yes to UTC
  - Restart
- 
+
 ## 3rd - Google DNS
 - sudo su
 - echo "dns-nameservers 8.8.8.8 8.8.4.4" >> /etc/network/interfaces
@@ -51,9 +51,8 @@ http://archive.ubuntu.com/ubuntu/dists/xenial-updates/main/installer-amd64/curre
 ## 6th - Install Agent
 - sudo su
 - cd /tmp && wget https://apt.puppetlabs.com/puppetlabs-release-pc1-xenial.deb && dpkg -i puppetlabs-release-pc1-xenial.deb
-- apt -y update && apt -y install puppet-agent
+- apt -y update && apt -y install puppet-common
 
 ## 7th - Ensure Puppet Running
 - sudo su
 - /opt/puppetlabs/bin/puppet resource service puppet ensure=running enable=true
-
