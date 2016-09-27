@@ -43,7 +43,9 @@ http://archive.ubuntu.com/ubuntu/dists/xenial-updates/main/installer-amd64/curre
 ## 5th - Configure Hostname
 - sudo su
 - echo "prod-webserver01.local.lan" > /etc/hostname 
-- echo "127.0.0.1    prod-webserver01 prod-webserver01.local.lan localhost" > /etc/hosts
+- echo "127.0.0.1        prod-webserver01 prod-webserver01.local.lan localhost" > /etc/hosts
+- echo "10.100.10.4      puppet puppetmaster puppetmaster.local.lan" >> /etc/hosts
+
 
 ## 6th - Install Agent
 - sudo su
