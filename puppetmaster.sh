@@ -25,6 +25,7 @@ cp /etc/puppetlabs/* /etc/home_puppetmaster -R
 sudo mv /etc/puppetlabs /etc/puppetlabs.bak
 sudo mv /etc/home_puppetmaster /etc/puppetlabs
 cd /etc/puppetlabs
+sudo git pull
 sudo git checkout master_install
 sudo git add .
 sudo git commit -a -m "added puppet default configs"
