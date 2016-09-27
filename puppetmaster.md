@@ -35,8 +35,6 @@ http://archive.ubuntu.com/ubuntu/dists/xenial-updates/main/installer-amd64/curre
  - echo "puppetmaster.local.lan" > /etc/hostname
  - echo "127.0.0.1    puppetmaster puppetmaster.local.lan localhost" > /etc/hosts
  - echo "dns-nameservers 8.8.8.8 8.8.4.4" >> /etc/network/interfaces
- - service networking restart
- - service networking status
  - reboot
 
 ## 4th - Install NTP, PuppetServer, GIT install, clone and 1st commit
