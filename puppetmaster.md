@@ -29,23 +29,24 @@ http://archive.ubuntu.com/ubuntu/dists/xenial-updates/main/installer-amd64/curre
  - Yes to Install Grub
  - Yes to UTC
  - Restart
- 
-## 3rd - Google DNS
-- sudo su
-- echo "dns-nameservers 8.8.8.8 8.8.4.4" >> /etc/network/interfaces
-- service networking restart
-- service networking status
 
+## 3rd - Define Hostname
+ - sudo su
+ - echo "puppetmaster.local.lan" > /etc/hostname
+ - echo "127.0.0.1    puppetmaster puppetmaster.local.lan localhost" > /etc/hosts
+ - reboot
+ 
 ## 4th - Install NTP
 - sudo su
 - apt -y install ntp
 - service ntp restart
 - service ntp status
 
-## 5th - Define Hostname
+## 5th - Google DNS
 - sudo su
-- echo "puppetmaster.local.lan" > /etc/hostname
-- echo "127.0.0.1    puppetmaster puppetmaster.local.lan localhost" > /etc/hosts
+- echo "dns-nameservers 8.8.8.8 8.8.4.4" >> /etc/network/interfaces
+- service networking restart
+- service networking status
 
 ## 6th - Install Puppet Server
 - sudo su
@@ -60,7 +61,7 @@ http://archive.ubuntu.com/ubuntu/dists/xenial-updates/main/installer-amd64/curre
 - sudo su
 - apt update
 - apt -y install git
-- git clone https://github.com/abacao/home_puppetmaster.git 
+- git clone https://github.com/abacao/home_puppetmaster.git
 - mv home_puppetmaster /etc
 - cp /etc/puppetlabs/* /etc/home_puppetmaster -R
 - sudo mv /etc/puppetlabs /etc/puppetlabs.bak
