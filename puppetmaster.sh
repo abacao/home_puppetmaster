@@ -2,7 +2,7 @@
 
 # 4th - Install NTP
 apt -y install ntp
-service ntp restart
+service ntp restart;
 #service ntp status
 
 ## 5th - Google DNS

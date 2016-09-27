@@ -30,12 +30,15 @@ http://archive.ubuntu.com/ubuntu/dists/xenial-updates/main/installer-amd64/curre
  - Yes to UTC
  - Restart
 
-## 3rd - Define Hostname
+## 3rd - Define Hostname and DNS
  - sudo su
  - echo "puppetmaster.local.lan" > /etc/hostname
  - echo "127.0.0.1    puppetmaster puppetmaster.local.lan localhost" > /etc/hosts
+ - echo "dns-nameservers 8.8.8.8 8.8.4.4" >> /etc/network/interfaces
+ - service networking restart
+ - service networking status
  - reboot
- 
+
 ## 4th - Install NTP
 - sudo su
 - apt -y install ntp
@@ -43,10 +46,10 @@ http://archive.ubuntu.com/ubuntu/dists/xenial-updates/main/installer-amd64/curre
 - service ntp status
 
 ## 5th - Google DNS
-- sudo su
-- echo "dns-nameservers 8.8.8.8 8.8.4.4" >> /etc/network/interfaces
-- service networking restart
-- service networking status
+#- sudo su
+#- echo "dns-nameservers 8.8.8.8 8.8.4.4" >> /etc/network/interfaces
+#- service networking restart
+#- service networking status
 
 ## 6th - Install Puppet Server
 - sudo su
