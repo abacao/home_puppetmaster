@@ -31,41 +31,41 @@ http://archive.ubuntu.com/ubuntu/dists/xenial-updates/main/installer-amd64/curre
  - Restart
  
 ## 3rd - Google DNS
-sudo su
-echo "dns-nameservers 8.8.8.8 8.8.4.4" >> /etc/network/interfaces
-service networking restart
-service networking status
+- sudo su
+- echo "dns-nameservers 8.8.8.8 8.8.4.4" >> /etc/network/interfaces
+- service networking restart
+- service networking status
 
 ## 4th - Install NTP
-sudo su
-apt -y install ntp
-service ntp restart
-service ntp status
+- sudo su
+- apt -y install ntp
+- service ntp restart
+- service ntp status
 
 ## 5th - Define Hostname
-sudo su
-echo "puppetmaster.local.lan" > /etc/hostname
-echo "127.0.0.1    puppetmaster puppetmaster.local.lan localhost" > /etc/hosts
+- sudo su
+- echo "puppetmaster.local.lan" > /etc/hostname
+- echo "127.0.0.1    puppetmaster puppetmaster.local.lan localhost" > /etc/hosts
 
 ## 6th - Install Puppet Server
-sudo su
-cd /tmp && wget https://apt.puppetlabs.com/puppetlabs-release-pc1-trusty.deb
-dpkg -i puppetlabs-release-pc1-trusty.deb
-apt update
-apt -y install puppetserver
-service puppetserver restart
-service puppetserver status
+- sudo su
+- cd /tmp && wget https://apt.puppetlabs.com/puppetlabs-release-pc1-xenial.deb
+- dpkg -i puppetlabs-release-pc1-xenial.deb
+- apt update
+- apt -y install puppetserver
+- service puppetserver restart
+- service puppetserver status
 
 ## 7th - GIT Installation and Config
-sudo su
-apt update
-apt -y install git
-git clone https://github.com/abacao/home_puppetmaster.git 
-mv home_puppetmaster /etc
-cp /etc/puppetlabs/* /etc/home_puppetmaster -R
-sudo mv /etc/puppetlabs /etc/puppetlabs.bak
-sudo mv /etc/home_puppetmaster /etc/puppetlabs
-cd /etc/puppetlabs
-sudo git add .
-sudo git commit -a -m "added puppet default configs"
-sudo git push origin master
+- sudo su
+- apt update
+- apt -y install git
+- git clone https://github.com/abacao/home_puppetmaster.git 
+- mv home_puppetmaster /etc
+- cp /etc/puppetlabs/* /etc/home_puppetmaster -R
+- sudo mv /etc/puppetlabs /etc/puppetlabs.bak
+- sudo mv /etc/home_puppetmaster /etc/puppetlabs
+- cd /etc/puppetlabs
+- sudo git add .
+- sudo git commit -a -m "added puppet default configs"
+- sudo git push origin master
