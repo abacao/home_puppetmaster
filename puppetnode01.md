@@ -50,7 +50,7 @@ http://archive.ubuntu.com/ubuntu/dists/xenial-updates/main/installer-amd64/curre
 
 ## 6th - Install Agent
 - sudo su
-- cd /tmp && wget https://apt.puppetlabs.com/puppetlabs-release-pc1-xenial.deb && dpkg -i puppetlabs-release-pc1-trusty.deb
+- cd /tmp && wget https://apt.puppetlabs.com/puppetlabs-release-pc1-xenial.deb && dpkg -i puppetlabs-release-pc1-xenial.deb
 - apt -y update && apt -y install puppet-agent
 
 ## 7th - Ensure Puppet Running
