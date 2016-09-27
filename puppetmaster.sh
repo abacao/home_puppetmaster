@@ -10,7 +10,7 @@ cd /tmp && wget https://apt.puppetlabs.com/puppetlabs-release-pc1-xenial.deb
 dpkg -i puppetlabs-release-pc1-xenial.deb
 apt update
 apt -y install puppetserver
-service puppetserver restart
+#service puppetserver restart
 #service puppetserver status
 
 ## 6th - GIT Installation and Config
@@ -28,4 +28,4 @@ cd /etc/puppetlabs
 sudo git checkout master_install
 sudo git add .
 sudo git commit -a -m "added puppet default configs"
-sudo git push origin master_install
+sudo git push origin master
