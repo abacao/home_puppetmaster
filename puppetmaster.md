@@ -39,7 +39,5 @@ http://archive.ubuntu.com/ubuntu/dists/xenial-updates/main/installer-amd64/curre
 
 ## 4th - Install NTP, PuppetServer, GIT install, clone and 1st commit
 - sudo su
-- cd /tmp
-- wget https://raw.githubusercontent.com/abacao/home_puppetmaster/master/puppetmaster.sh
-- chmod +x puppetmaster.sh
+- cd /tmp && wget https://raw.githubusercontent.com/abacao/home_puppetmaster/master/puppetmaster.sh && chmod +x puppetmaster.sh
 - bash -x puppetmaster.sh
