@@ -9,7 +9,7 @@ service ntp restart;
 cd /tmp && wget https://apt.puppetlabs.com/puppetlabs-release-pc1-xenial.deb
 dpkg -i puppetlabs-release-pc1-xenial.deb
 apt update
-apt -y install puppetserver
+apt -y install puppetmaster
 #service puppetserver restart
 #service puppetserver status
 
